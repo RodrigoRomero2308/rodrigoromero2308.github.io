@@ -1,0 +1,238 @@
+:root {
+  --mobile-width: 375px;
+  /* Primary Colors */
+  --soft-cyan: hsl(174, 77%, 80%);
+  --strong-cyan: hsl(174, 86%, 45%);
+  --light-grayish-red: hsl(14, 92%, 95%);
+  --light-red: hsl(15, 100%, 70%);
+  --pale-blue: hsl(226, 100%, 87%);
+  /* Neutral Colors */
+  --white: hsl(0, 0%, 100%);
+  --very-pale-blue: hsl(230, 100%, 99%);
+  --light-grayish-blue-1: hsl(224, 65%, 95%);
+  --light-grayish-blue-2: hsl(223, 50%, 87%);
+  --grayish-blue: hsl(225, 20%, 60%);
+  --dark-desatured-blue: hsl(227, 35%, 25%);
+  /* Font weights */
+  --font-weight-1: 600;
+  --font-weight-2: 800;
+  --outer-padding: 40px;
+}
+
+.App {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--very-pale-blue);
+  width: 100vw;
+  height: 100vh;
+}
+
+.App .TitleContainer {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.App .TitleContainer .AppTitle {
+  font-size: 24px;
+  color: var(--dark-desatured-blue);
+  font-weight: var(--font-weight-2);
+  letter-spacing: 2px;
+  padding-bottom: 6px;
+}
+
+.App .TitleContainer .AppSubtitle {
+  font-size: 12px;
+  color: var(--grayish-blue);
+  font-weight: var(--font-weight-1);
+  letter-spacing: 1px;
+}
+
+.App .PricingCardContainer {
+  padding: 0 25%;
+}
+
+.App .PricingCardContainer .PricingCard {
+  /* border: var(--grayish-blue) solid 1px; */
+  border-radius: 5px;
+  background-color: var(--white);
+  -webkit-box-shadow: 0px 5px 26px -11px var(--grayish-blue);
+  box-shadow: 0px 5px 26px -11px var(--grayish-blue);
+}
+
+.PricingViews,
+.PricingPrice {
+  color: var(--grayish-blue);
+}
+
+.PricingPrice {
+  display: flex;
+  align-items: center;
+}
+
+.PricingViews {
+  letter-spacing: 2px;
+  font-weight: var(--font-weight-1);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.PricingCardContent {
+  padding: var(--outer-padding);
+}
+
+.App .PricingCardContainer .PricingCard .PricingDataContainer,
+.PricingFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PricingPriceNumber {
+  color: var(--dark-desatured-blue);
+  font-weight: var(--font-weight-2);
+  font-size: 30px;
+  margin-right: 4px;
+}
+
+.BillingContainer {
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-weight-1);
+}
+
+.BillingContainer .BillingText {
+  font-size: 12px;
+  margin: 0 6px;
+  color: var(--grayish-blue);
+  flex: 1;
+  text-align: end;
+  width: auto;
+  white-space: nowrap;
+}
+
+.BillingText:first-child {
+  flex: 99;
+}
+
+.BillingContainer .BillingTextDiscount {
+  font-size: 10px;
+  color: var(--light-red);
+  background-color: var(--light-grayish-red);
+  padding: 2px 4px;
+  border-radius: 99999px;
+}
+
+.PricingFooter {
+  align-items: center;
+  padding: var(--outer-padding);
+  border-top: solid var(--light-grayish-blue-2) 1px;
+}
+
+.PricingFeatures {
+  font-size: 12px;
+  color: var(--grayish-blue);
+  margin-block-start: 0;
+  margin: 0;
+  padding-inline-start: 12px;
+  list-style-image: url("./assets/icon-check.svg");
+}
+
+.PricingFeatures li {
+  margin: 6px 0;
+}
+
+.PricingButtonContainer {
+  background-color: var(--dark-desatured-blue);
+  padding: 12px 36px;
+  border-radius: 999999px;
+  border: unset;
+  font-size: 12px;
+  font-weight: var(--font-weight-1);
+  color: var(--light-grayish-blue-2);
+  cursor: pointer;
+  outline: none;
+}
+
+.PricingButtonContainer:hover {
+  color: var(--white);
+}
+
+.PricingRange {
+  width: 100%;
+  margin: 30px 0;
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  background: var(--light-grayish-blue-1);
+  outline: none;
+  height: 6px;
+  border-radius: 999px;
+}
+
+.PricingRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  background: url("./assets/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--strong-cyan);
+}
+
+.BillingToggle {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  margin: 0 6px;
+}
+
+/* Hide default HTML checkbox */
+.BillingToggle .BillingToggleCheck {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.BillingToggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--light-grayish-blue-2);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.BillingToggleSlider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.BillingToggleCheck:checked + .BillingToggleSlider {
+  background-color: var(--strong-cyan);
+}
+
+.BillingToggleCheck:focus + .BillingToggleSlider {
+  box-shadow: 0 0 1px var(--strong-cyan);
+}
+
+.BillingToggleCheck:checked + .BillingToggleSlider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
